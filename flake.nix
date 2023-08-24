@@ -1,5 +1,5 @@
 {
-  description = "Audiobookshelf flake";
+  description = "Tone flake";
 
   inputs = {
     nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/*.tar.gz";
