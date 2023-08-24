@@ -71,6 +71,11 @@
           };
         };
 
+        apps.default = {
+          type = "app";
+          program = "${config.packages.default}/bin/tone";
+        };
+
         formatter = inputs.alejandra.packages.${system}.default;
 
         devShells.default = pkgs.mkShell {
