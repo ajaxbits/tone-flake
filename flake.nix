@@ -47,12 +47,14 @@
             sha256 = "0wg6zlq7ifjmj87da0xvgxm55zp7z81w37pjin81rwvxbh8y5bxw";
           };
         };
+
+        getToneUrl = system: "https://github.com/sandreas/tone/releases/download/v${version}/tone-${version}-${systemMap.${system}.name}.tar.gz";
       in {
         packages.default = pkgs.stdenv.mkDerivation {
           inherit pname version description;
 
           src = builtins.fetchTarball {
-            url = "https://github.com/sandreas/tone/releases/download/v${version}/tone-${version}-${systemMap.${system}.name}.tar.gz";
+            url = getToneUrl system;
             sha256 = systemMap.${system}.sha256;
           };
 
